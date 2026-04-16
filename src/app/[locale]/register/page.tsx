@@ -15,12 +15,12 @@ export default function RegisterPage() {
             <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="max-w-[1200px] w-full grid grid-cols-1 lg:grid-cols-2 glass rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-3xl border border-white/10"
+                className="max-w-[1200px] w-full grid grid-cols-1 lg:grid-cols-2 glass rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-3xl border border-primary/10"
             >
                 {/* Form Side - Reversed for Register */}
-                <div className="p-6 md:p-16 lg:p-20 bg-background/50 backdrop-blur-3xl lg:border-r border-white/10">
+                <div className="p-6 md:p-16 lg:p-20 bg-background/50 backdrop-blur-3xl lg:border-r border-primary/10">
                     <div className="max-w-md mx-auto">
-                        <Link href="/" className="lg:hidden text-2xl font-black font-outfit text-white mb-8 block text-center">RIM</Link>
+                        <Link href="/" className="lg:hidden text-2xl font-black font-outfit text-foreground mb-8 block text-center">RIM</Link>
                         <h1 className="text-3xl md:text-4xl font-black mb-2 italic text-center md:text-left">Begin Your <span className="text-primary italic">Transformation</span></h1>
                         <p className="text-foreground/40 font-bold mb-10 uppercase tracking-tighter text-[10px] md:text-xs text-center md:text-left">Create your medical-grade profile today.</p>
 
@@ -33,7 +33,7 @@ export default function RegisterPage() {
                                         <input
                                             type="text"
                                             placeholder="John"
-                                            className="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-4 py-3.5 focus:outline-none focus:border-primary transition-all text-white text-sm"
+                                            className="w-full bg-white/5 border border-primary/10 rounded-2xl pl-12 pr-4 py-3.5 focus:outline-none focus:border-primary transition-all text-foreground text-sm"
                                         />
                                     </div>
                                 </div>
@@ -44,7 +44,7 @@ export default function RegisterPage() {
                                         <input
                                             type="text"
                                             placeholder="Doe"
-                                            className="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-4 py-3.5 focus:outline-none focus:border-primary transition-all text-white text-sm"
+                                            className="w-full bg-white/5 border border-primary/10 rounded-2xl pl-12 pr-4 py-3.5 focus:outline-none focus:border-primary transition-all text-foreground text-sm"
                                         />
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@ export default function RegisterPage() {
                                     <input
                                         type="email"
                                         placeholder="john.doe@medical-consulting.com"
-                                        className="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-6 py-3.5 focus:outline-none focus:border-primary transition-all text-white text-sm"
+                                        className="w-full bg-white/5 border border-primary/10 rounded-2xl pl-12 pr-6 py-3.5 focus:outline-none focus:border-primary transition-all text-foreground text-sm"
                                     />
                                 </div>
                             </div>
@@ -69,7 +69,7 @@ export default function RegisterPage() {
                                     <input
                                         type="password"
                                         placeholder="••••••••••••"
-                                        className="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-6 py-3.5 focus:outline-none focus:border-primary transition-all text-white text-sm"
+                                        className="w-full bg-white/5 border border-primary/10 rounded-2xl pl-12 pr-6 py-3.5 focus:outline-none focus:border-primary transition-all text-foreground text-sm"
                                     />
                                 </div>
                             </div>
@@ -95,10 +95,10 @@ export default function RegisterPage() {
                 </div>
 
                 {/* Visual Side */}
-                <div className="hidden lg:block relative p-16 overflow-hidden bg-black">
+                <div className="hidden lg:block relative p-16 overflow-hidden bg-background">
                     <div className="relative z-10 h-full flex flex-col items-center justify-center text-center space-y-10">
                         <div className="w-24 h-24 bg-gradient-to-tr from-primary to-secondary rounded-3xl flex items-center justify-center rotate-12 shadow-2xl shadow-primary/20">
-                            <Sparkle size={48} className="text-white animate-pulse" />
+                            <Sparkle size={48} className="text-foreground animate-pulse" />
                         </div>
 
                         <div className="space-y-6 max-w-sm">

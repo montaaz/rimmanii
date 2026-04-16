@@ -1,19 +1,56 @@
 {
     "HomePage": {
-        "title": "Rim Consultancy",
-        "subtitle": "Aesthetic dermotherapy and paramedical dermopigmentation",
-        "description": "Excellence in skin restoration and aesthetic enhancement."
+        "title": "RIM | Rym Manai",
+        "subtitle": "Inner Balance and Emotional Intelligence",
+        "description": "Excellence in self-development and personal growth.",
+        "oldPrice": "319$",
+        "newPrice": "169$",
+        "launchOffer": "LAUNCH OFFER",
+        "discoverMore": "Discover More"
     },
     "Navigation": {
         "home": "Home",
-        "about": "About",
-        "services": "Services",
-        "blog": "Blog",
-        "pricing": "Pricing",
+        "services": "Energy Sessions",
+        "blog": "Gratitude Journal",
+        "pricing": "Paid Courses",
+        "faq": "FAQ",
         "contact": "Contact",
-        "reservation": "Reserve",
-        "login": "Login",
-        "register": "Register"
+        "account": "My Account",
+        "cart": "Cart"
+    },
+    "About": {
+        "title": "Who is Rym Manai?",
+        "legacy": "OUR LEGACY",
+        "storyTitle": "Crafting Confidence Through",
+        "storyHighlight": "Inner Balance",
+        "storyP1": "Founded by Rym Manai, our consulting center was born out of a passion for self-development and personal growth. We believe that true success is not just about achievements, but about restoring the relationship one has with oneself.",
+        "storyP2": "Specializing in feminine energy and emotional intelligence, we bridge the gap between traditional wisdom and modern psychological tools. Every session is approached with deep empathy and the precision of an expert consultant.",
+        "p1": "Personal growth consultant and feminine energy expert, Rym Manai dedicates her life to helping others discover their true selves and reach their full potential.",
+        "p2": "Through her personal and professional journey, she discovered that true balance begins from within and requires a deep understanding of the energies that drive us.",
+        "p3": "She has trained thousands of students worldwide, helping them overcome obstacles and build a life of meaning and fulfillment.",
+        "exp": "16+",
+        "expLabel": "Years Experience",
+        "patients": "7K+",
+        "patientsLabel": "Happy Students",
+        "philosophyTitle": "Spirit First",
+        "philosophyDesc": "We integrate proven psychological methods with spiritual wisdom for holistic transformation.",
+        "valuesTitle": "Values That Define Us",
+        "valuesSubtitle": "The pillars of our self-development practice.",
+        "v1Title": "Excellence",
+        "v1Desc": "Uncompromising quality in every session and course we provide.",
+        "v2Title": "Compassion",
+        "v2Desc": "Understanding the emotional journey of self-discovery and growth.",
+        "v3Title": "Authenticity",
+        "v3Desc": "Helping you find and embrace your true self with confidence.",
+        "posts": "Posts",
+        "postsCount": "450+",
+        "followers": "Followers",
+        "followersCount": "2.5M+"
+    },
+    "Brand": {
+        "name": "Rym Manai",
+        "email": "contact@rymmanai.com",
+        "description": "Transforming lives through self-development and emotional intelligence."
     },
     "Reservation": {
         "title": "Secure Your Session",
@@ -36,15 +73,47 @@
         "alertSelectDate": "Please select a date first"
     },
     "Services": {
-        "aestheticDermotherapy": "Aesthetic Dermotherapy",
-        "paramedicalDermopigmentation": "Paramedical Dermopigmentation",
-        "medicalScarRevision": "Medical Scar Revision",
-        "initialSkinConsultation": "Initial Skin Consultation"
+        "energySessions": "Energy Sessions",
+        "emotionalIntelligence": "Emotional Intelligence",
+        "feminineEnergy": "Feminine Energy",
+        "personalGrowth": "Personal Growth"
+    },
+    "Stats": {
+        "participants": "Course Participants",
+        "participantsCount": "7325+",
+        "experience": "Years of Experience",
+        "experienceCount": "16+",
+        "followers": "Social Media Followers",
+        "followersCount": "+2M"
+    },
+    "Catalog": {
+        "cta": "Start the journey of change",
+        "question": "Want to progress, but don't know where to start?",
+        "description": "Discover a series of courses that will teach you how to reach the best version of yourself and how to live a more inspired and meaningful life with yourself and others."
+    },
+    "Testimonials": {
+        "title": "What do people say about me?"
+    },
+    "Footer": {
+        "contactUs": "Contact Us",
+        "quickLinks": "Quick Links",
+        "legal": "Legal",
+        "allRightsReserved": "All rights reserved.",
+        "terms": "Terms & Conditions",
+        "privacy": "Privacy Policy"
+    },
+    "Video": {
+        "title": "Hear what Rym Manai's students have to say"
+    },
+    "Floating": {
+        "question": "Have a question? Talk to us!",
+        "teamReady": "24/7 Team is ready",
+        "talkToUs": "Talk to Us"
     },
     "ContactPage": {
         "title": "Let's Start Your",
         "titleHighlight": "Transformation",
-        "description": "Reach out to us for any inquiries or to schedule a professional consultation. Our team is here to guide you.",
+        "description": "Reach out to us for any inquiries or to schedule a personal consultation. We are here to guide you on your journey.",
         "emailUs": "Email Us",
         "callUs": "Call Us",
         "visitUs": "Visit Us",
@@ -56,97 +125,203 @@
         "submitInquiry": "Submit Inquiry",
         "placeholderName": "John Doe",
         "placeholderEmail": "john@example.com",
-        "placeholderMessage": "Tell us about your requirements...",
+        "placeholderMessage": "Tell us how we can help you...",
         "services": {
-            "dermotherapy": "Dermotherapy",
-            "dermopigmentation": "Dermopigmentation",
-            "consultation": "Consultation"
+            "energy": "Energy Balancing",
+            "emotional": "Emotional Intelligence",
+            "feminine": "Feminine Energy"
         }
     },
     "ServicesPage": {
-        "title": "Pinnacle of",
-        "titleHighlight": "Skin Excellence",
-        "subtitle": "We merge medical science with aesthetic precision to deliver transformative results tailored to your unique dermatological profile.",
-        "bookButton": "Book This Service",
+        "title": "Path to",
+        "titleHighlight": "Inner Peace",
+        "subtitle": "Discover transformative sessions and courses designed to help you reconnect with your authentic self and achieve emotional balance.",
+        "bookButton": "Book This Session",
         "trust": {
             "medicalGrade": {
-                "title": "Medical Grade",
-                "desc": "Highest safety standards"
+                "title": "Deep Wisdom",
+                "desc": "Years of spiritual study"
             },
             "modernTech": {
-                "title": "Modern Tech",
-                "desc": "Latest industry equipment"
+                "title": "Proven Methods",
+                "desc": "Effective psychological tools"
             },
             "expertCare": {
-                "title": "Expert Care",
-                "desc": "Certified practitioners"
+                "title": "Personal Guidance",
+                "desc": "Tailored approach for you"
             },
             "zeroWait": {
-                "title": "Zero Wait",
-                "desc": "Punctual appointment times"
+                "title": "Flexible Times",
+                "desc": "Sessions that fit your life"
             }
         }
     },
     "ServicesData": {
         "aestheticDermotherapy": {
-            "title": "Aesthetic Dermotherapy",
-            "description": "Advanced non-invasive treatments focusing on skin rejuvenation, texture improvement, and anti-aging solutions using medical-grade technology.",
+            "title": "Energy Balancing",
+            "description": "Restore your natural vitality with energy sessions that clear blockages and promote deep relaxation.",
             "benefits": [
-                "Boosts Collagen",
-                "Reduces Fine Lines",
-                "Even Skin Tone"
+                "Stress Reduction",
+                "Mental Clarity",
+                "Vital Energy"
             ],
             "price": "From $150"
         },
         "paramedicalDermopigmentation": {
-            "title": "Paramedical Dermopigmentation",
-            "description": "Specialized medical tattooing techniques designed to camouflage scars, reconstruct areolas, and restore skin appearance after surgery or trauma.",
+            "title": "Emotional Intelligence",
+            "description": "Master your emotions and build stronger relationships through our specialized coaching sessions.",
             "benefits": [
-                "Scar Camouflage",
-                "Areola Reconstruction",
-                "Vitiligo Cover"
+                "Self-Awareness",
+                "Better Communication",
+                "Psychological Resilience"
             ],
-            "price": "From $250"
+            "price": "From $200"
         },
         "detailedSkinAnalysis": {
-            "title": "Detailed Skin Analysis",
-            "description": "Multi-spectral imaging and professional dermatological analysis to create a customized treatment roadmap for your unique skin needs.",
+            "title": "Feminine Energy",
+            "description": "Reconnect with your inner power and embrace your femininity with confidence and grace.",
             "benefits": [
-                "Customized Plans",
-                "Progress Tracking",
-                "Expert Guidance"
-            ],
-            "price": "From $80"
-        },
-        "postSurgicalCare": {
-            "title": "Post-Surgical Care",
-            "description": "Dedicated recovery assistance and specialized treatments to ensure optimal healing and minimal scarring after cosmetic procedures.",
-            "benefits": [
-                "Faster Healing",
-                "Scar Prevention",
-                "Professional Monitoring"
-            ],
-            "price": "From $120"
-        },
-        "pigmentationCorrection": {
-            "title": "Pigmentation Correction",
-            "description": "Targeted treatments for hyperpigmentation, melasma, and sun damage to restore a clear, radiant complexion.",
-            "benefits": [
-                "Fades Dark Spots",
-                "Brightens Complexion",
-                "Safe for All Tones"
+                "Empowerment",
+                "Self-Love",
+                "Authenticity"
             ],
             "price": "From $180"
         },
-        "medicalMicroNeedling": {
-            "title": "Medical Micro-Needling",
-            "description": "Precision-controlled micro-injuries that stimulate the natural healing process and enhance the penetration of therapeutic serums.",
+        "postSurgicalCare": {
+            "title": "Gratitude Practice",
+            "description": "Shift your perspective with guided gratitude exercises that bring more joy to your daily life.",
             "benefits": [
-                "Refines Pores",
-                "Improves Texture",
-                "Minimal Downtime"
+                "Positive Outlook",
+                "Reduced Anxiety",
+                "Daily Joy"
             ],
-            "price": "From $200"
+            "price": "From $80"
+        },
+        "pigmentationCorrection": {
+            "title": "Mindset Mastery",
+            "description": "Break free from limiting beliefs and build a strong mindset for success in all areas of life.",
+            "benefits": [
+                "Boosted Confidence",
+                "Goal Setting",
+                "Focus and Clarity"
+            ],
+            "price": "From $220"
+        },
+        "medicalMicroNeedling": {
+            "title": "Holistic Healing",
+            "description": "A comprehensive approach to healing that integrates mind, body, and spirit.",
+            "benefits": [
+                "Complete Balance",
+                "Inner Peace",
+                "Spiritual Growth"
+            ],
+            "price": "From $250"
         }
+    },
+    "BlogPage": {
+        "title": "Gratitude",
+        "titleHighlight": "Journal",
+        "subtitle": "Insights, daily reflections, and professional advice on inner peace and personal growth.",
+        "searchPlaceholder": "Search articles...",
+        "readMore": "Read More"
+    },
+    "BlogData": {
+        "p1": {
+            "category": "Spirituality",
+            "title": "The Power of Gratitude: How a Daily Practice Changes Your Brain",
+            "description": "Discover the scientific breakthroughs in gratitude research and how a simple daily practice can transform your outlook on life.",
+            "date": "Feb 10, 2026",
+            "author": "Rym Manai",
+            "tags": ["Gratitude", "Mindset"]
+        },
+        "p2": {
+            "category": "Emotions",
+            "title": "Emotional Intelligence in the Workplace",
+            "description": "Learn how to master your emotions and build stronger professional relationships through empathy and self-awareness.",
+            "date": "Feb 08, 2026",
+            "author": "Rym Manai",
+            "tags": ["EQ", "Success"]
+        },
+        "p3": {
+            "category": "Femininity",
+            "title": "Embracing Your Feminine Energy in a Masculine World",
+            "description": "Strategies for reconnecting with your inner power and achieving balance between giving and receiving.",
+            "date": "Feb 05, 2026",
+            "author": "Specialist Team",
+            "tags": ["Energy", "Balance"]
+        }
+    },
+    "FAQPage": {
+        "title": "Common Questions",
+        "subtitle": "Everything you need to know about our personal growth sessions.",
+        "stillQuestions": "Still have questions?",
+        "contactDesc": "If you couldn't find the answer you're looking for, please contact our support team.",
+        "contactBtn": "Contact Support"
+    },
+    "FAQData": {
+        "q1": {
+            "q": "What is the focus of Rym Manai's coaching?",
+            "a": "Rym focuses on holistic self-development, with a special emphasis on emotional intelligence and feminine energy balancing."
+        },
+        "q2": {
+            "q": "Are the sessions only for women?",
+            "a": "While many courses are tailored for women's energy, our emotional intelligence and mindset programs are beneficial for everyone seeking growth."
+        },
+        "q3": {
+            "q": "How long does a transformation take?",
+            "a": "Personal growth is a journey. While a single session can provide immediate clarity, lasting change typically happens over 3-6 months of consistent practice."
+        },
+        "q4": {
+            "q": "Can I book a session online?",
+            "a": "Yes, all our sessions and courses can be booked directly through our platform and are conducted via secure video conferencing."
+        },
+        "q5": {
+            "q": "What is the refund policy for courses?",
+            "a": "We offer a 7-day money-back guarantee for our digital courses if you're not satisfied with the content."
+        }
+    },
+    "PricingPage": {
+        "title": "Investment in",
+        "titleHighlight": "Yourself",
+        "subtitle": "Transparent pricing for premium self-development sessions and transformative courses.",
+        "recommended": "Recommended",
+        "perSession": "/ session",
+        "selectPlan": "Select {plan} Plan",
+        "customTitle": "Custom Transformation Plan",
+        "customDesc": "Need something specifically tailored? Let's discuss a custom bundle.",
+        "customBtn": "Get Custom Quote"
+    },
+    "PricingData": {
+        "discovery": {
+            "name": "Discovery",
+            "price": "99",
+            "description": "Perfect for initial assessment and single introductory coaching sessions.",
+            "features": ["Mindset Analysis", "Single Session", "Action Plan", "Intro E-book", "Pre-session Questionnaire"]
+        },
+        "professional": {
+            "name": "Soul Journey",
+            "price": "249",
+            "description": "Our most popular plan for ongoing guidance and deep emotional intelligence work.",
+            "features": ["3 Coaching Sessions", "Energy Mapping", "Priority Support", "Worksheets Bundle", "Email Support"]
+        },
+        "platinum": {
+            "name": "Total Mastery",
+            "price": "599",
+            "description": "Comprehensive transformation plan for long-term growth and feminine energy mastery.",
+            "features": ["Weekly Sessions", "Lifetime Community", "Unlimited Consultations", "VIP Masterclasses", "24/7 Voxer Access"]
+        }
+    },
+    "CartPage": {
+        "title": "Your Shop",
+        "titleHighlight": "Cart",
+        "subtitle": "Review your selection of courses and sessions before starting your journey.",
+        "empty": "Your cart is empty",
+        "shopNow": "Browse Courses",
+        "summary": "Order Summary",
+        "subtotal": "Subtotal",
+        "shipping": "Processing Fee",
+        "total": "Total",
+        "checkout": "Proceed to Checkout",
+        "remove": "Remove"
     }
 }

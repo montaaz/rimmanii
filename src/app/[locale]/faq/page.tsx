@@ -4,59 +4,73 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { Plus, Minus, HelpCircle, MessageSquare } from 'lucide-react';
-
-const faqs = [
-    {
-        question: "What is the difference between dermotherapy and dermopigmentation?",
-        answer: "Dermotherapy focus on skin health and rejuvenation through non-invasive treatments, while dermopigmentation is a reconstructive tattooing technique used to camouflage scars or restore skin pigments."
-    },
-    {
-        question: "Is the procedure painful?",
-        answer: "We use high-grade topical anesthetics to ensure maximum comfort. Most patients describe the sensation as a light vibration or minor scratching, depending on the sensitivity of the area."
-    },
-    {
-        question: "How long do the results of dermopigmentation last?",
-        answer: "Results can last between 3 to 5 years. However, factors like sun exposure, skin type, and lifestyle can affect longevity. Periodic touch-ups are recommended to maintain color vibrancy."
-    },
-    {
-        question: "What is the recovery time for dermotherapy?",
-        answer: "Most treatments have minimal to zero downtime. You might experience slight redness for a few hours, but you can usually return to your daily activities immediately."
-    },
-    {
-        question: "Do I need a consultation before booking?",
-        answer: "Yes, we require an initial consultation for all new patients to assess skin health, discuss goals, and perform patch tests if necessary for pigmentation procedures."
-    }
-];
+import { Plus, Minus, HelpCircle, MessageSquare, ChevronRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export default function FAQPage() {
+    const t = useTranslations('FAQPage');
+    const tData = useTranslations('FAQData');
     const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
+    const faqs = ['q1', 'q2', 'q3', 'q4', 'q5'];
+
     return (
-        <main className="min-h-screen">
+        <main className="min-h-screen bg-background">
             <Header />
 
-            <section className="pt-40 pb-24">
-                <div className="section-container max-w-4xl">
-                    <div className="text-center mb-12 md:mb-16">
-                        <h1 className="text-3xl md:text-6xl font-black mb-6 px-4">Common Questions</h1>
-                        <p className="text-foreground/60 text-base md:text-lg px-6">Everything you need to know about our specialized skin treatments.</p>
-                    </div>
+            {/* Hero Section */}
+            <section className="relative pt-44 md:pt-64 pb-24 md:pb-40 overflow-hidden">
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+                <div className="section-container relative z-10 text-center max-w-4xl">
+                    <motion.h1
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-4xl md:text-8xl font-black mb-8 leading-[1.1] tracking-tighter uppercase"
+                    >
+                        {t('title')}
+                    </motion.h1>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="text-foreground/40 max-w-2xl mx-auto text-base md:text-xl px-4 leading-relaxed font-medium italic"
+                    >
+                        {t('subtitle')}
+                    </motion.p>
+                </div>
+            </section>
 
-                    <div className="space-y-4">
-                        {faqs.map((faq, i) => (
-                            <div key={i} className="glass rounded-3xl overflow-hidden border border-white/5">
+            <section className="pb-24 md:pb-40">
+                <div className="section-container max-w-4xl">
+                    <div className="space-y-6">
+                        {faqs.map((qKey, i) => (
+                            <motion.div 
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                className={`rounded-[2rem] md:rounded-[3rem] overflow-hidden border transition-all duration-500 ${
+                                    activeIndex === i 
+                                    ? 'bg-primary/5 border-primary/30 shadow-2xl' 
+                                    : 'bg-background border-primary/10 hover:border-primary/30'
+                                }`}
+                            >
                                 <button
                                     onClick={() => setActiveIndex(activeIndex === i ? null : i)}
-                                    className="w-full flex items-center justify-between p-6 md:p-8 text-left hover:bg-white/5 transition-colors"
+                                    className="w-full flex items-center justify-between p-8 md:p-12 text-left group"
                                 >
-                                    <div className="flex items-center space-x-4">
-                                        <div className={`p-2 rounded-lg shrink-0 ${activeIndex === i ? 'bg-primary text-white' : 'bg-white/5 text-primary'}`}>
-                                            <HelpCircle size={18} className="md:size-20" />
+                                    <div className="flex items-center gap-6">
+                                        <div className={`w-10 h-10 md:w-14 md:h-14 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-500 ${
+                                            activeIndex === i ? 'bg-primary text-background' : 'bg-primary/10 text-primary group-hover:scale-110'
+                                        }`}>
+                                            <HelpCircle size={24} />
                                         </div>
-                                        <span className="text-base md:text-xl font-bold">{faq.question}</span>
+                                        <span className="text-lg md:text-2xl font-black uppercase tracking-tighter leading-tight">{tData(`${qKey}.q`)}</span>
                                     </div>
-                                    {activeIndex === i ? <Minus className="text-primary shrink-0 ml-2" /> : <Plus className="text-primary shrink-0 ml-2" />}
+                                    <div className={`p-3 rounded-full border transition-all duration-500 ${activeIndex === i ? 'bg-primary/20 border-primary/50 text-primary rotate-180' : 'border-primary/10 text-foreground/20'}`}>
+                                        {activeIndex === i ? <Minus size={20} /> : <Plus size={20} />}
+                                    </div>
                                 </button>
 
                                 <AnimatePresence>
@@ -65,24 +79,39 @@ export default function FAQPage() {
                                             initial={{ height: 0, opacity: 0 }}
                                             animate={{ height: "auto", opacity: 1 }}
                                             exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                                             className="overflow-hidden"
                                         >
-                                            <div className="p-6 md:p-8 pt-0 text-foreground/60 text-sm md:text-base leading-relaxed border-t border-white/5 mx-6 md:mx-0">
-                                                {faq.answer}
+                                            <div className="px-10 md:px-14 pb-12 md:pb-16 text-foreground/40 text-base md:text-xl leading-relaxed italic border-t border-primary/5 pt-8">
+                                                {tData(`${qKey}.a`)}
                                             </div>
                                         </motion.div>
                                     )}
                                 </AnimatePresence>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
 
-                    <div className="mt-16 md:mt-20 glass p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] text-center border-2 border-primary/20 mx-4 md:mx-0">
-                        <MessageSquare size={40} className="md:size-48 mx-auto mb-6 text-primary" />
-                        <h3 className="text-2xl md:text-3xl font-bold mb-4">Still have questions?</h3>
-                        <p className="text-foreground/50 text-sm md:text-base mb-8 max-w-sm md:max-w-md mx-auto">If you couldn&apos;t find the answer you&apos;re looking for, please contact our support team.</p>
-                        <button className="btn-primary w-full md:w-auto">Contact Support</button>
-                    </div>
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="mt-24 md:mt-32 p-12 md:p-24 rounded-[4rem] bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10 text-center relative overflow-hidden group"
+                    >
+                         <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-[100px] pointer-events-none group-hover:bg-primary/20 transition-all duration-1000" />
+                        
+                        <div className="relative z-10">
+                            <div className="w-24 h-24 md:w-32 md:h-32 bg-background rounded-full flex items-center justify-center mx-auto mb-10 text-primary shadow-xl border border-primary/10 group-hover:scale-110 transition-transform duration-700">
+                                <MessageSquare size={48} strokeWidth={1} />
+                            </div>
+                            <h3 className="text-3xl md:text-5xl font-black mb-6 uppercase tracking-tighter">{t('stillQuestions')}</h3>
+                            <p className="text-foreground/40 text-base md:text-xl mb-12 max-w-xl mx-auto italic">{t('contactDesc')}</p>
+                            <button className="group/btn flex items-center gap-4 text-[10px] md:text-xs font-black uppercase tracking-[0.4em] px-12 py-6 bg-primary text-background rounded-full mx-auto hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500">
+                                 <span>{t('contactBtn')}</span>
+                                 <ChevronRight size={16} className="group-hover/btn:translate-x-2 transition-transform" />
+                            </button>
+                        </div>
+                    </motion.div>
                 </div>
             </section>
 

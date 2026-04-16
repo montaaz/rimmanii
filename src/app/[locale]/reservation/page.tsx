@@ -138,8 +138,8 @@ export default function ReservationPage() {
                                         className={cn(
                                             "w-10 h-10 md:w-12 md:h-12 rounded-2xl flex items-center justify-center font-bold text-lg transition-all duration-500 shadow-xl",
                                             step >= s
-                                                ? "bg-gradient-to-br from-primary to-secondary text-white scale-110 ring-4 ring-primary/20"
-                                                : "bg-surface/50 text-foreground/40 border border-white/5"
+                                                ? "bg-gradient-to-br from-primary to-secondary text-foreground scale-110 ring-4 ring-primary/20"
+                                                : "bg-surface/50 text-foreground/40 border border-primary/5"
                                         )}
                                     >
                                         {step > s ? <CheckCircle2 size={20} /> : s}
@@ -160,7 +160,7 @@ export default function ReservationPage() {
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         transition={{ duration: 0.4 }}
-                        className="glass p-6 md:p-12 rounded-[3rem] shadow-2xl border border-white/10"
+                        className="glass p-6 md:p-12 rounded-[3rem] shadow-2xl border border-primary/10"
                     >
                         {/* STEP 1: SERVICE SELECTION */}
                         {step === 1 && (
@@ -183,7 +183,7 @@ export default function ReservationPage() {
                                                     "group relative p-8 rounded-3xl text-left border transition-all duration-300 overflow-hidden",
                                                     isSelected
                                                         ? "border-primary bg-primary/10 shadow-[0_0_40px_-10px_rgba(139,92,246,0.5)]"
-                                                        : "border-white/5 bg-white/5 hover:border-white/20 hover:bg-white/10"
+                                                        : "border-primary/5 bg-white/5 hover:border-primary/20 hover:bg-white/10"
                                                 )}
                                             >
                                                 <div className={cn(
@@ -194,12 +194,12 @@ export default function ReservationPage() {
                                                 <div className="relative z-10 flex items-start space-x-6">
                                                     <div className={cn(
                                                         "p-4 rounded-2xl transition-colors duration-300",
-                                                        isSelected ? "bg-primary text-white shadow-lg" : "bg-white/10 text-foreground/60 group-hover:bg-white/20 group-hover:text-foreground"
+                                                        isSelected ? "bg-primary text-foreground shadow-lg" : "bg-white/10 text-foreground/60 group-hover:bg-white/20 group-hover:text-foreground"
                                                     )}>
                                                         <Icon size={28} />
                                                     </div>
                                                     <div>
-                                                        <h4 className={cn("text-lg font-bold mb-2 transition-colors", isSelected ? "text-white" : "text-foreground")}>
+                                                        <h4 className={cn("text-lg font-bold mb-2 transition-colors", isSelected ? "text-foreground" : "text-foreground")}>
                                                             {service.label}
                                                         </h4>
                                                         <p className="text-sm text-foreground/50 leading-relaxed">
@@ -236,7 +236,7 @@ export default function ReservationPage() {
                                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
                                     {/* Custom Calendar */}
                                     <div className="lg:col-span-3 space-y-6">
-                                        <div className="bg-white/5 border border-white/10 p-6 md:p-8 rounded-[2.5rem]">
+                                        <div className="bg-white/5 border border-primary/10 p-6 md:p-8 rounded-[2.5rem]">
                                             <div className="flex items-center justify-between mb-8">
                                                 <h4 className="text-xl font-bold flex items-center gap-2 capitalize">
                                                     <CalendarIcon className="text-primary" size={20} />
@@ -281,7 +281,7 @@ export default function ReservationPage() {
                                                                 className={cn(
                                                                     "aspect-square rounded-2xl text-sm font-bold flex items-center justify-center transition-all duration-300 relative group",
                                                                     isSelected
-                                                                        ? "bg-primary text-white shadow-lg shadow-primary/30 scale-105"
+                                                                        ? "bg-primary text-foreground shadow-lg shadow-primary/30 scale-105"
                                                                         : "bg-surface/50 hover:bg-surface hover:border-primary/30 border border-transparent",
                                                                     isToday && !isSelected && "border-primary text-primary"
                                                                 )}
@@ -298,7 +298,7 @@ export default function ReservationPage() {
 
                                     {/* Time Slots */}
                                     <div className="lg:col-span-2 space-y-6">
-                                        <div className="bg-white/5 border border-white/10 p-6 md:p-8 rounded-[2.5rem] h-full flex flex-col">
+                                        <div className="bg-white/5 border border-primary/10 p-6 md:p-8 rounded-[2.5rem] h-full flex flex-col">
                                             <h4 className="text-xl font-bold flex items-center gap-2 mb-8">
                                                 <Clock className="text-secondary" size={20} />
                                                 {t('availableSlots')}
@@ -313,7 +313,7 @@ export default function ReservationPage() {
                                                             "py-4 rounded-xl text-sm font-bold border transition-all duration-300",
                                                             selectedTime === time
                                                                 ? "bg-secondary/20 border-secondary text-secondary shadow-lg shadow-secondary/10"
-                                                                : "bg-surface/30 border-transparent hover:bg-surface hover:border-white/10 text-foreground/70"
+                                                                : "bg-surface/30 border-transparent hover:bg-surface hover:border-primary/10 text-foreground/70"
                                                         )}
                                                     >
                                                         {time}
@@ -330,7 +330,7 @@ export default function ReservationPage() {
                                     </div>
                                 </div>
 
-                                <div className="flex justify-between items-center pt-8 border-t border-white/5">
+                                <div className="flex justify-between items-center pt-8 border-t border-primary/5">
                                     <button onClick={() => setStep(1)} className="text-foreground/40 hover:text-foreground transition-colors font-medium">
                                         {t('back')}
                                     </button>
@@ -356,22 +356,22 @@ export default function ReservationPage() {
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <div className="space-y-6">
-                                        <div className="group bg-white/5 focus-within:bg-white/10 rounded-2xl flex items-center space-x-4 border border-white/10 focus-within:border-primary/50 transition-all p-4">
+                                        <div className="group bg-white/5 focus-within:bg-white/10 rounded-2xl flex items-center space-x-4 border border-primary/10 focus-within:border-primary/50 transition-all p-4">
                                             <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary group-focus-within:scale-110 transition-transform"><User size={20} /></div>
-                                            <input type="text" placeholder={t('fullName')} className="bg-transparent border-none focus:ring-0 text-white flex-grow font-medium placeholder:text-foreground/30" />
+                                            <input type="text" placeholder={t('fullName')} className="bg-transparent border-none focus:ring-0 text-foreground flex-grow font-medium placeholder:text-foreground/30" />
                                         </div>
-                                        <div className="group bg-white/5 focus-within:bg-white/10 rounded-2xl flex items-center space-x-4 border border-white/10 focus-within:border-secondary/50 transition-all p-4">
+                                        <div className="group bg-white/5 focus-within:bg-white/10 rounded-2xl flex items-center space-x-4 border border-primary/10 focus-within:border-secondary/50 transition-all p-4">
                                             <div className="w-10 h-10 rounded-xl bg-secondary/20 flex items-center justify-center text-secondary group-focus-within:scale-110 transition-transform"><Mail size={20} /></div>
-                                            <input type="email" placeholder={t('email')} className="bg-transparent border-none focus:ring-0 text-white flex-grow font-medium placeholder:text-foreground/30" />
+                                            <input type="email" placeholder={t('email')} className="bg-transparent border-none focus:ring-0 text-foreground flex-grow font-medium placeholder:text-foreground/30" />
                                         </div>
-                                        <div className="group bg-white/5 focus-within:bg-white/10 rounded-2xl flex items-center space-x-4 border border-white/10 focus-within:border-accent/50 transition-all p-4">
+                                        <div className="group bg-white/5 focus-within:bg-white/10 rounded-2xl flex items-center space-x-4 border border-primary/10 focus-within:border-accent/50 transition-all p-4">
                                             <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center text-accent group-focus-within:scale-110 transition-transform"><Phone size={20} /></div>
-                                            <input type="tel" placeholder={t('phone')} className="bg-transparent border-none focus:ring-0 text-white flex-grow font-medium placeholder:text-foreground/30" />
+                                            <input type="tel" placeholder={t('phone')} className="bg-transparent border-none focus:ring-0 text-foreground flex-grow font-medium placeholder:text-foreground/30" />
                                         </div>
                                     </div>
 
                                     <div className="col-span-1">
-                                        <div className="h-full bg-gradient-to-br from-primary/10 to-secondary/10 border border-white/10 rounded-[2rem] p-8 flex flex-col justify-between relative overflow-hidden">
+                                        <div className="h-full bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/10 rounded-[2rem] p-8 flex flex-col justify-between relative overflow-hidden">
                                             <div className="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl" />
 
                                             <div>
@@ -379,20 +379,20 @@ export default function ReservationPage() {
                                                 <div className="space-y-4">
                                                     <div>
                                                         <span className="text-xs text-foreground/50 block mb-1">Service</span>
-                                                        <span className="text-xl font-black text-white leading-tight">
+                                                        <span className="text-xl font-black text-foreground leading-tight">
                                                             {services.find(s => s.id === selectedService)?.label}
                                                         </span>
                                                     </div>
                                                     <div className="flex gap-8">
                                                         <div>
                                                             <span className="text-xs text-foreground/50 block mb-1">Date</span>
-                                                            <span className="text-lg font-bold text-white">
+                                                            <span className="text-lg font-bold text-foreground">
                                                                 {selectedDate?.toLocaleDateString(locale)}
                                                             </span>
                                                         </div>
                                                         <div>
                                                             <span className="text-xs text-foreground/50 block mb-1">Time</span>
-                                                            <span className="text-lg font-bold text-white">
+                                                            <span className="text-lg font-bold text-foreground">
                                                                 {selectedTime}
                                                             </span>
                                                         </div>
@@ -400,7 +400,7 @@ export default function ReservationPage() {
                                                 </div>
                                             </div>
 
-                                            <div className="mt-8 pt-8 border-t border-white/10">
+                                            <div className="mt-8 pt-8 border-t border-primary/10">
                                                 <div className="flex items-center space-x-2 text-xs text-foreground/60">
                                                     <Shield size={14} className="text-secondary" />
                                                     <span>{t('secureSSL')}</span>
@@ -410,7 +410,7 @@ export default function ReservationPage() {
                                     </div>
                                 </div>
 
-                                <div className="flex justify-between items-center pt-8 border-t border-white/5">
+                                <div className="flex justify-between items-center pt-8 border-t border-primary/5">
                                     <button onClick={() => setStep(2)} className="text-foreground/40 hover:text-foreground transition-colors font-medium">
                                         {t('back')}
                                     </button>

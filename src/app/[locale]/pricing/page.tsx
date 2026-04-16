@@ -3,108 +3,124 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
-import { Check, Zap, Crown, Star } from 'lucide-react';
-
-const plans = [
-    {
-        name: "Discovery",
-        price: "99",
-        description: "Perfect for initial assessment and single treatment introductory sessions.",
-        icon: Star,
-        color: "blue",
-        features: ["Skin Analysis", "Single Treatment", "Basic Consultation", "Aftercare Kit"]
-    },
-    {
-        name: "Professional",
-        price: "249",
-        description: "Our most popular plan for ongoing dermotherapy and small scar revision.",
-        icon: Zap,
-        color: "primary",
-        featured: true,
-        features: ["3 Treatment Sessions", "Advanced Analysis", "Priority Booking", "Premium Aftercare Kit", "Phone Support"]
-    },
-    {
-        name: "Platinum",
-        price: "599",
-        description: "Comprehensive reconstructive plan for major dermopigmentation needs.",
-        icon: Crown,
-        color: "secondary",
-        features: ["Full Reconstruction", "Color Matching Lab", "Unlimited Consultations", "Luxury Aftercare Pack", "24/7 Concierge"]
-    }
-];
+import { Check, Zap, Crown, Star, ChevronRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export default function PricingPage() {
+    const t = useTranslations('PricingPage');
+    const tData = useTranslations('PricingData');
+
+    const plans = [
+        { id: "discovery", icon: Star, color: "blue" },
+        { id: "professional", icon: Zap, color: "primary", featured: true },
+        { id: "platinum", icon: Crown, color: "secondary" }
+    ];
+
     return (
-        <main className="min-h-screen">
+        <main className="min-h-screen bg-background">
             <Header />
 
-            <section className="pt-40 pb-24">
-                <div className="section-container">
-                    <div className="text-center mb-12 md:mb-20">
-                        <h1 className="text-4xl md:text-6xl font-black mb-6 px-4">Investment in <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Yourself</span></h1>
-                        <p className="text-foreground/60 text-base md:text-lg max-w-2xl mx-auto px-6">Transparent pricing for premium dermatological care and reconstruction.</p>
-                    </div>
+            {/* Hero Section */}
+            <section className="relative pt-44 md:pt-64 pb-24 md:pb-40 overflow-hidden">
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+                <div className="section-container relative z-10 text-center">
+                    <motion.h1
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-4xl md:text-8xl font-black mb-8 leading-[1.1] tracking-tighter"
+                    >
+                        {t('title')} <span className="text-secondary italic font-signature lowercase">{t('titleHighlight')}</span>
+                    </motion.h1>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="text-foreground/50 max-w-3xl mx-auto text-base md:text-xl px-4 leading-relaxed"
+                    >
+                        {t('subtitle')}
+                    </motion.p>
+                </div>
+            </section>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Pricing Section */}
+            <section className="pb-24 md:pb-40">
+                <div className="section-container">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 items-center">
                         {plans.map((plan, i) => (
                             <motion.div
                                 key={i}
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: i * 0.1 }}
-                                className={`relative glass p-8 md:p-10 rounded-[2.5rem] md:rounded-[3rem] border-2 flex flex-col ${plan.featured ? 'border-primary/50 bg-primary/5 lg:scale-105 z-10' : 'border-white/5'
-                                    }`}
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1, duration: 0.8 }}
+                                className={`relative group p-10 md:p-14 rounded-[3rem] border flex flex-col transition-all duration-700 ${
+                                    plan.featured 
+                                    ? 'bg-secondary/10 border-secondary/30 lg:scale-110 z-10 shadow-2xl' 
+                                    : 'bg-primary/5 border-primary/10 hover:border-primary/30'
+                                }`}
                             >
                                 {plan.featured && (
-                                    <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black uppercase tracking-widest px-6 py-2 rounded-full">
-                                        Recommended
+                                    <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-secondary text-foreground text-[10px] font-black uppercase tracking-[0.3em] px-8 py-3 rounded-full shadow-lg">
+                                        {t('recommended')}
                                     </div>
                                 )}
 
-                                <div className="flex items-center justify-between mb-8">
-                                    <div className={`p-4 rounded-2xl ${plan.featured ? 'bg-primary/20 text-primary' : 'bg-white/5 text-foreground/40'}`}>
-                                        <plan.icon size={28} />
+                                <div className="flex items-center justify-between mb-12">
+                                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center ${plan.featured ? 'bg-secondary/20 text-secondary' : 'bg-primary/20 text-primary'}`}>
+                                        <plan.icon size={32} />
                                     </div>
                                     <div className="text-right">
-                                        <span className="text-4xl font-black">${plan.price}</span>
-                                        <span className="text-xs font-bold opacity-40 ml-1">/ session</span>
+                                        <div className="flex items-start justify-end">
+                                            <span className="text-sm font-bold opacity-40 mt-2">$</span>
+                                            <span className="text-5xl md:text-6xl font-black tracking-tighter">{tData(`${plan.id}.price`)}</span>
+                                        </div>
+                                        <span className="text-[10px] font-black uppercase tracking-widest opacity-30">{t('perSession')}</span>
                                     </div>
                                 </div>
 
-                                <h3 className="text-2xl font-bold mb-4">{plan.name}</h3>
-                                <p className="text-foreground/50 text-sm mb-10 leading-relaxed min-h-[60px]">{plan.description}</p>
+                                <h3 className="text-3xl font-black mb-4 uppercase tracking-tighter">{tData(`${plan.id}.name`)}</h3>
+                                <p className="text-foreground/40 text-sm md:text-base mb-12 italic leading-relaxed">{tData(`${plan.id}.description`)}</p>
 
-                                <div className="space-y-4 mb-12 flex-grow">
-                                    {plan.features.map((feature, fIdx) => (
-                                        <div key={fIdx} className="flex items-center space-x-3 text-sm">
-                                            <div className={`w-5 h-5 rounded-full flex items-center justify-center ${plan.featured ? 'bg-primary/20 text-primary' : 'bg-white/10 text-foreground/30'}`}>
-                                                <Check size={12} />
-                                            </div>
-                                            <span className="font-medium text-foreground/80">{feature}</span>
+                                <div className="space-y-5 mb-14 flex-grow">
+                                    {(tData.raw(`${plan.id}.features`) as string[]).map((feature, idx) => (
+                                        <div key={idx} className="flex items-center gap-4 text-xs font-black uppercase tracking-[0.2em] text-foreground/60">
+                                            <Check size={16} className={plan.featured ? 'text-secondary' : 'text-primary'} />
+                                            <span>{feature}</span>
                                         </div>
                                     ))}
                                 </div>
 
-                                <button className={`w-full py-5 rounded-2xl font-black uppercase tracking-widest text-xs transition-all ${plan.featured ? 'btn-primary' : 'btn-outline'
-                                    }`}>
-                                    Select {plan.name} Plan
+                                <button className={`w-full py-6 rounded-2xl font-black uppercase tracking-[0.3em] text-[10px] transition-all duration-500 hover:scale-105 ${
+                                    plan.featured 
+                                    ? 'bg-secondary text-foreground shadow-xl shadow-secondary/20' 
+                                    : 'border border-primary/20 hover:bg-primary/10'
+                                }`}>
+                                    {t('selectPlan', { plan: tData(`${plan.id}.name`) })}
                                 </button>
                             </motion.div>
                         ))}
                     </div>
 
-                    <div className="mt-16 md:mt-20 glass p-6 md:p-8 rounded-[2rem] md:rounded-3xl flex flex-col md:flex-row items-center justify-between gap-8 border border-white/5 text-center md:text-left">
-                        <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6">
-                            <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center text-accent shrink-0">
-                                <Star size={32} />
+                    <motion.div 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="mt-24 md:mt-32 p-10 md:p-16 rounded-[3rem] bg-gradient-to-r from-primary/5 to-secondary/5 border border-primary/10 flex flex-col md:flex-row items-center justify-between gap-12 group"
+                    >
+                        <div className="flex items-center gap-8">
+                            <div className="w-20 h-20 rounded-full bg-background/50 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
+                                <Star size={40} />
                             </div>
                             <div>
-                                <h4 className="text-xl font-bold">Custom Treatment Plan</h4>
-                                <p className="text-foreground/50 text-sm">Need something specifically tailored? Let&apos;s discuss a custom bundle.</p>
+                                <h4 className="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-2">{t('customTitle')}</h4>
+                                <p className="text-foreground/40 text-base md:text-lg italic">{t('customDesc')}</p>
                             </div>
                         </div>
-                        <button className="btn-outline w-full md:w-auto px-10">Get Custom Quote</button>
-                    </div>
+                        <button className="group/btn flex items-center gap-4 text-[11px] font-black uppercase tracking-[0.4em] px-10 py-6 border border-primary/20 rounded-full hover:bg-primary hover:text-background transition-all duration-700">
+                             <span>{t('customBtn')}</span>
+                             <ChevronRight size={16} className="group-hover/btn:translate-x-2 transition-transform" />
+                        </button>
+                    </motion.div>
                 </div>
             </section>
 

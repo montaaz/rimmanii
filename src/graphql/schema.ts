@@ -34,6 +34,16 @@ export const typeDefs = `#graphql
     lastUpdate: String!
   }
 
+  type Consultation {
+    id: ID!
+    userId: ID!
+    user: User
+    subject: String!
+    message: String!
+    status: String!
+    createdAt: String!
+  }
+
   type AdminStats {
     totalUsers: Int!
     activeAppointments: Int!
@@ -47,6 +57,7 @@ export const typeDefs = `#graphql
     appointments(userId: ID!): [Appointment]
     allAppointments: [Appointment]
     allUsers: [User]
+    allConsultations: [Consultation]
     clinicalProgress(userId: ID!): [ClinicalProgress]
     adminStats: AdminStats
     currentUser: User
@@ -55,6 +66,8 @@ export const typeDefs = `#graphql
   type Mutation {
     bookAppointment(serviceId: ID!, date: String!): Appointment
     updateAppointmentStatus(id: ID!, status: String!): Appointment
+    updateConsultationStatus(id: ID!, status: String!): Consultation
+    deleteConsultation(id: ID!): Boolean
     deleteAppointment(id: ID!): Boolean
     toggleUserStatus(id: ID!, role: String!): User
     updateProfile(fullName: String!): User

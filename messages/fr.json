@@ -1,19 +1,56 @@
 {
     "HomePage": {
-        "title": "Conseil en Dermatologie Rim",
-        "subtitle": "Dermothérapie esthétique et dermopigmentation paramédicale",
-        "description": "L'excellence dans la restauration cutanée et l'amélioration esthétique."
+        "title": "RIM | Rym Manai",
+        "subtitle": "Équilibre Intérieur et Intelligence Émotionnelle",
+        "description": "Excellence dans le développement personnel et la croissance.",
+        "oldPrice": "319$",
+        "newPrice": "169$",
+        "launchOffer": "OFFRE DE LANCEMENT",
+        "discoverMore": "Découvrir Plus"
     },
     "Navigation": {
         "home": "Accueil",
-        "about": "À Propos",
-        "services": "Services",
-        "blog": "Blog",
-        "pricing": "Tarifs",
+        "services": "Sessions Énergétiques",
+        "blog": "Journal de Gratitude",
+        "pricing": "Cours Payants",
+        "faq": "FAQ",
         "contact": "Contact",
-        "reservation": "Réserver",
-        "login": "Connexion",
-        "register": "S'inscrire"
+        "account": "Mon Compte",
+        "cart": "Panier"
+    },
+    "About": {
+        "title": "Qui est Rym Manai ?",
+        "legacy": "NOTRE HÉRITAGE",
+        "storyTitle": "Développer la Confiance à travers",
+        "storyHighlight": "L'Équilibre Intérieur",
+        "storyP1": "Fondé par Rym Manai, notre centre de conseil est né d'une passion pour le développement personnel et la croissance. Nous pensons que le véritable succès ne réside pas seulement dans les accomplissements, mais dans la restauration de la relation que l'on entreتient avec soi-même.",
+        "storyP2": "Spécialisés dans l'énergie féminine et l'intelligence émotionnelle, nous comblons le fossé entre la sagesse traditionnelle et les outils psychologiques modernes. Chaque séance est abordée avec une profonde empathie et la précision d'un consultant expert.",
+        "p1": "Consultante en développement personnel et experte en énergie féminine, Rym Manai consacre sa vie à aider les autres à découvrir leur vrai moi et à atteindre leur plein potentiel.",
+        "p2": "À travers son parcours personnel et professionnel, elle a découvert que le véritable équilibre commence de l'intérieur et nécessite une compréhension profonde des énergies qui nous animent.",
+        "p3": "Elle a formé des milliers d'étudiants à travers le monde, les aidant à surmonter les obstacles et à construire une vie pleine de sens et d'épanouissement.",
+        "exp": "16+",
+        "expLabel": "Années d'Expérience",
+        "patients": "7K+",
+        "patientsLabel": "Étudiants Heureux",
+        "philosophyTitle": "L'Esprit d'Abord",
+        "philosophyDesc": "Nous intégrons des méthodes psychologiques prouvées à la sagesse spirituelle pour une transformation holistique.",
+        "valuesTitle": "Les Valeurs qui nous Définissent",
+        "valuesSubtitle": "Les piliers de notre pratique de développement personnel.",
+        "v1Title": "Excellence",
+        "v1Desc": "Une qualité sans compromis dans chaque séance et chaque cours que nous proposons.",
+        "v2Title": "Compassion",
+        "v2Desc": "Comprendre le voyage émotionnel de la découverte de soi et de la croissance.",
+        "v3Title": "Authenticité",
+        "v3Desc": "Vous aider à trouver et à embrasser votre vrai moi en toute confiance.",
+        "posts": "Publications",
+        "postsCount": "450+",
+        "followers": "Abonnés",
+        "followersCount": "2.5M+"
+    },
+    "Brand": {
+        "name": "Rym Manai",
+        "email": "contact@rymmanai.com",
+        "description": "Transformer des vies grâce au développement personnel et à l'intelligence émotionnelle."
     },
     "Reservation": {
         "title": "Réservez votre séance",
@@ -35,117 +72,255 @@
         "alertSelectDate": "Veuillez d'abord sélectionner une date"
     },
     "Services": {
-        "aestheticDermotherapy": "Dermothérapie esthétique",
-        "paramedicalDermopigmentation": "Dermopigmentation paramédicale",
-        "medicalScarRevision": "Révision médicale des cicatrices",
-        "initialSkinConsultation": "Consultation initiale de la peau"
+        "energySessions": "Sessions Énergétiques",
+        "emotionalIntelligence": "Intelligence Émotionnelle",
+        "feminineEnergy": "Énergie Féminine",
+        "personalGrowth": "Croissance Personnelle"
+    },
+    "Stats": {
+        "participants": "Participants aux cours",
+        "participantsCount": "7325+",
+        "experience": "Années d'expérience",
+        "experienceCount": "16+",
+        "followers": "Abonnés sur les réseaux sociaux",
+        "followersCount": "+2M"
+    },
+    "Catalog": {
+        "cta": "Commencez le voyage du changement",
+        "question": "Vous voulez progresser, mais vous ne savez pas par où commencer ?",
+        "description": "Découvrez une série de cours qui vous apprendront comment atteindre la meilleure version de vous-même et comment vivre une vie plus inspirée et pleine de sens avec vous-même et avec les autres."
+    },
+    "Testimonials": {
+        "title": "Que disent les gens de moi ?"
+    },
+    "Footer": {
+        "contactUs": "Contactez-nous",
+        "quickLinks": "Liens Rapides",
+        "legal": "Mentions Légales",
+        "allRightsReserved": "Tous droits réservés.",
+        "terms": "Termes & Conditions",
+        "privacy": "Politique de Confidentialité"
+    },
+    "Video": {
+        "title": "Écoutez ce que disent les étudiants de Rym Manai"
+    },
+    "Floating": {
+        "question": "Une question ? Parlez-nous !",
+        "teamReady": "Équipe prête 24/7",
+        "talkToUs": "Parlez-nous"
     },
     "ContactPage": {
-        "title": "Commencez Votre",
+        "title": "Commençons Votre",
         "titleHighlight": "Transformation",
-        "description": "Contactez-nous pour toute demande ou pour planifier une consultation professionnelle. Notre équipe est là pour vous guider.",
-        "emailUs": "Envoyez-nous un Email",
+        "description": "Contactez-nous pour toute demande ou pour planifier une consultation personnelle. Nous sommes là pour vous guider dans votre voyage.",
+        "emailUs": "Écrivez-nous",
         "callUs": "Appelez-nous",
-        "visitUs": "Rendez-nous Visite",
-        "sendMessage": "Envoyer un Message",
+        "visitUs": "Rendez-nous visite",
+        "sendMessage": "Envoyer un message",
         "fullName": "Nom Complet",
         "emailAddress": "Adresse Email",
         "serviceInterest": "Service d'Intérêt",
         "yourMessage": "Votre Message",
-        "submitInquiry": "Soumettre la Demande",
+        "submitInquiry": "Envoyer",
         "placeholderName": "Jean Dupont",
         "placeholderEmail": "jean@exemple.com",
-        "placeholderMessage": "Parlez-nous de vos besoins...",
+        "placeholderMessage": "Dites-nous comment nous pouvons vous aider...",
         "services": {
-            "dermotherapy": "Dermothérapie",
-            "dermopigmentation": "Dermopigmentation",
-            "consultation": "Consultation"
+            "energy": "Équilibrage Énergétique",
+            "emotional": "Intelligence Émotionnelle",
+            "feminine": "Énergie Féminine"
         }
     },
     "ServicesPage": {
-        "title": "L'Excellence",
-        "titleHighlight": "Cutanée",
-        "subtitle": "Nous allions médecine et précision esthétique pour offrir des résultats transformateurs adaptés à votre profil dermatologique unique.",
-        "bookButton": "Réservez ce Service",
+        "title": "Chemin vers la",
+        "titleHighlight": "Paix Intérieure",
+        "subtitle": "Découvrez des sessions et des cours transformateurs conçus pour vous aider à vous reconnecter avec votre moi authentique et à atteindre un équilibre émotionnel.",
+        "bookButton": "Réservez cette session",
         "trust": {
             "medicalGrade": {
-                "title": "Grade Médical",
-                "desc": "Normes de sécurité élevées"
+                "title": "Sagesse Profonde",
+                "desc": "Des années d'études spirituelles"
             },
             "modernTech": {
-                "title": "Technologie Moderne",
-                "desc": "Équipements de pointe"
+                "title": "Méthodes Éprouvées",
+                "desc": "Outils psychologiques efficaces"
             },
             "expertCare": {
-                "title": "Soins Experts",
-                "desc": "Praticiens certifiés"
+                "title": "Conseils Personnalisés",
+                "desc": "Approche sur mesure pour vous"
             },
             "zeroWait": {
-                "title": "Finie l'Attente",
-                "desc": "Rendez-vous ponctuels"
+                "title": "Horaires Flexibles",
+                "desc": "Sessions qui s'adaptent à votre vie"
             }
         }
     },
     "ServicesData": {
         "aestheticDermotherapy": {
-            "title": "Dermothérapie Esthétique",
-            "description": "Traitements avancés non invasifs focalisés sur le rajeunissement cutané, l'amélioration de la texture et l'anti-âge.",
+            "title": "Équilibrage Énergétique",
+            "description": "Retrouvez votre vitalité naturelle grâce à des séances énergétiques qui libèrent les blocages et favorisent une relaxation profonde.",
             "benefits": [
-                "Booste le Collagène",
-                "Réduit les Ridules",
-                "Teint Uniforme"
+                "Réduction du stress",
+                "Clarté mentale",
+                "Énergie vitale"
             ],
-            "price": "Dès 150€"
+            "price": "Dès 150$"
         },
         "paramedicalDermopigmentation": {
-            "title": "Dermopigmentation Paramédicale",
-            "description": "Techniques spécialisées de tatouage médical pour camoufler les cicatrices, reconstruire les aréoles et restaurer l'apparence.",
+            "title": "Intelligence Émotionnelle",
+            "description": "Maîtrisez vos émotions et construisez des relations plus solides grâce à nos séances de coaching spécialisées.",
             "benefits": [
-                "Camouflage Cicatrices",
-                "Reconstruction Aréole",
-                "Vitiligo"
+                "Conscience de soi",
+                "Meilleure communication",
+                "Résilience psychologique"
             ],
-            "price": "Dès 250€"
+            "price": "Dès 200$"
         },
         "detailedSkinAnalysis": {
-            "title": "Analyse Cutanée Détaillée",
-            "description": "Imagerie multi-spectrale et analyse dermatologique pour créer une feuille de route de traitement sur mesure.",
+            "title": "Énergie Féminine",
+            "description": "Reconnectez-vous avec votre puissance intérieure et embrassez votre féminité avec confiance et grâce.",
             "benefits": [
-                "Plans Personnalisés",
-                "Suivi des Progrès",
-                "Conseils d'Experts"
+                "Autonomisation",
+                "Amour de soi",
+                "Authenticité"
             ],
-            "price": "Dès 80€"
+            "price": "Dès 180$"
         },
         "postSurgicalCare": {
-            "title": "Soins Post-Chirurgicaux",
-            "description": "Assistance dédiée et traitements spécialisés pour une guérison optimale et une cicatrisation minimale après chirurgie.",
+            "title": "Pratique de la Gratitude",
+            "description": "Changez votre perspective grâce à des exercices de gratitude guidés qui apportent plus de joie dans votre quotidien.",
             "benefits": [
-                "Guérison Rapide",
-                "Prévention Cicatrices",
-                "Suivi Pro"
+                "Perspective positive",
+                "Anxiété réduite",
+                "Joie quotidienne"
             ],
-            "price": "Dès 120€"
+            "price": "Dès 80$"
         },
         "pigmentationCorrection": {
-            "title": "Correction de la Pigmentation",
-            "description": "Traitements ciblés pour l'hyperpigmentation, le mélasma et les dommages solaires pour un teint clair.",
+            "title": "Maîtrise de l'État d'Esprit",
+            "description": "Libérez-vous des croyances limitantes et construisez un mental fort pour réussir dans tous les domaines de la vie.",
             "benefits": [
-                "Atténue les Tâches",
-                "Illumine le Teint",
-                "Sûr pour Tous"
+                "Confiance boostée",
+                "Fixation d'objectifs",
+                "Focus et clarté"
             ],
-            "price": "Dès 180€"
+            "price": "Dès 220$"
         },
         "medicalMicroNeedling": {
-            "title": "Micro-Needling Médical",
-            "description": "Micro-perforations contrôlées pour stimuler la guérison naturelle et améliorer la pénétration des sérums.",
+            "title": "Guérison Holistique",
+            "description": "Une approche globale de la guérison qui intègre l'esprit, le corps et l'âme.",
             "benefits": [
-                "Affine les Pores",
-                "Améliore la Texture",
-                "Peu de Suites"
+                "Équilibre complet",
+                "Paix intérieure",
+                "Croissance spirituelle"
             ],
-            "price": "Dès 200€"
+            "price": "À partir de 250$"
         }
+    },
+    "BlogPage": {
+        "title": "Journal de",
+        "titleHighlight": "Gratitude",
+        "subtitle": "Réflexions quotidiennes et conseils professionnels sur la paix intérieure et la croissance personnelle.",
+        "searchPlaceholder": "Rechercher des articles...",
+        "readMore": "Lire plus"
+    },
+    "BlogData": {
+        "p1": {
+            "category": "Spiritualité",
+            "title": "Le pouvoir de la gratitude : comment une pratique quotidienne change votre cerveau",
+            "description": "Découvrez les percées scientifiques dans la recherche sur la gratitude et comment une simple pratique quotidienne peut transformer votre vision de la vie.",
+            "date": "10 fév. 2026",
+            "author": "Rym Manai",
+            "tags": ["Gratitude", "Mental"]
+        },
+        "p2": {
+            "category": "Émotions",
+            "title": "L'intelligence émotionnelle au travail",
+            "description": "Apprenez à maîtriser vos émotions et à construire des relations professionnelles plus solides grâce à l'empathie et à la conscience de soi.",
+            "date": "08 fév. 2026",
+            "author": "Rym Manai",
+            "tags": ["EQ", "Succès"]
+        },
+        "p3": {
+            "category": "Féminité",
+            "title": "Embrasser votre énergie féminine dans un monde masculin",
+            "description": "Stratégies pour vous reconnecter avec votre puissance intérieure et atteindre un équilibre entre donner et recevoir.",
+            "date": "05 fév. 2026",
+            "author": "Équipe Spécialisée",
+            "tags": ["Énergie", "Équilibre"]
+        }
+    },
+    "FAQPage": {
+        "title": "Questions Fréquentes",
+        "subtitle": "Tout ce que vous devez savoir sur nos séances de croissance personnelle.",
+        "stillQuestions": "Vous avez encore des questions ?",
+        "contactDesc": "Si vous n'avez pas trouvé la réponse que vous cherchez, veuillez contacter notre équipe d'assistance.",
+        "contactBtn": "Contacter le Support"
+    },
+    "FAQData": {
+        "q1": {
+            "q": "Quel est l'objectif du coaching de Rym Manai ?",
+            "a": "Rym se concentre sur le développement personnel holistique, avec un accent particulier sur l'intelligence émotionnelle et l'équilibrage de l'énergie féminine."
+        },
+        "q2": {
+            "q": "Les séances sont-elles réservées aux femmes ?",
+            "a": "Bien que de nombreux cours soient adaptés à l'énergie des femmes, nos programmes d'intelligence émotionnelle et d'état d'esprit sont bénéfiques pour tous ceux qui cherchent à grandir."
+        },
+        "q3": {
+            "q": "Combien de temps prend une transformation ?",
+            "a": "La croissance personnelle est un voyage. Bien qu'une seule séance puisse apporter une clarté immédiate, un changement durable se produit généralement sur 3 à 6 mois de pratique constante."
+        },
+        "q4": {
+            "q": "Puis-je réserver une séance en ligne ?",
+            "a": "Oui, toutes nos sessions et nos cours peuvent être réservés directement via notre plateforme et se déroulent par vidéoconférence sécurisée."
+        },
+        "q5": {
+            "q": "Quelle est la politique de remboursement des cours ?",
+            "a": "Nous offrons une garantie de remboursement de 7 jours pour nos cours numériques si vous n'êtes pas satisfait du contenu."
+        }
+    },
+    "PricingPage": {
+        "title": "Investissez en",
+        "titleHighlight": "Vous-même",
+        "subtitle": "Une tarification transparente pour des séances de développement personnel premium et des cours transformateurs.",
+        "recommended": "Recommandé",
+        "perSession": "/ séance",
+        "selectPlan": "Sélectionner le plan {plan}",
+        "customTitle": "Plan de Transformation Personnalisé",
+        "customDesc": "Vous avez besoin de quelque chose de spécifiquement adapté ? Discutons d'un forfait sur mesure.",
+        "customBtn": "Obtenir un Devis"
+    },
+    "PricingData": {
+        "discovery": {
+            "name": "Découverte",
+            "price": "99",
+            "description": "Idéal pour une évaluation initiale et des séances de coaching d'introduction.",
+            "features": ["Analyse de l'État d'Esprit", "Séance Unique", "Plan d'Action", "E-book d'Introduction", "Questionnaire pré-séance"]
+        },
+        "professional": {
+            "name": "Voyage de l'Âme",
+            "price": "249",
+            "description": "Notre plan le plus populaire pour un accompagnement continu et un travail approfondi sur l'intelligence émotionnelle.",
+            "features": ["3 Séances de Coaching", "Cartographie Énergétique", "Support Prioritaire", "Pack de Fiches de Travail", "Support par Email"]
+        },
+        "platinum": {
+            "name": "Maîtrise Totale",
+            "price": "599",
+            "description": "Plan de transformation complet pour une croissance à long terme et une maîtrise de l'énergie féminine.",
+            "features": ["Séances Hebdomadaires", "Communauté à Vie", "Consultations Illimitées", "Masterclasses VIP", "Accès Voxer 24/7"]
+        }
+    },
+    "CartPage": {
+        "title": "Votre Panier",
+        "titleHighlight": "Boutique",
+        "subtitle": "Consultez votre sélection de cours et de sessions avant de commencer votre voyage.",
+        "empty": "Votre panier est vide",
+        "shopNow": "Parcourir les cours",
+        "summary": "Résumé de la commande",
+        "subtotal": "Sous-total",
+        "shipping": "Frais de traitement",
+        "total": "Total",
+        "checkout": "Passer à la caisse",
+        "remove": "Supprimer"
     }
 }

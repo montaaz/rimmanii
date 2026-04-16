@@ -35,6 +35,17 @@ export const resolvers = {
                 role: user.role
             }));
         },
+        allConsultations: async () => {
+            const result = await query('SELECT * FROM consultations ORDER BY created_at DESC');
+            return result.rows.map((c: any) => ({
+                id: c.id,
+                userId: c.user_id,
+                subject: c.subject,
+                message: c.message,
+                status: c.status,
+                createdAt: c.created_at.toISOString()
+            }));
+        },
         clinicalProgress: async (_: unknown, { userId }: { userId: string }) => {
             const result = await query('SELECT * FROM clinical_progress WHERE user_id = $1 ORDER BY last_update DESC', [userId]);
             return result.rows.map((cp: any) => ({
@@ -75,6 +86,18 @@ export const resolvers = {
         },
         date: (parent: any) => (parent.appointment_date || parent.date).toISOString()
     },
+    Consultation: {
+        user: async (parent: any) => {
+            const result = await query('SELECT * FROM users WHERE id = $1', [parent.userId || parent.user_id]);
+            const user = result.rows[0];
+            return user ? {
+                id: user.id,
+                email: user.email,
+                fullName: user.full_name,
+                role: user.role
+            } : null;
+        }
+    },
     Mutation: {
         bookAppointment: async (_: unknown, { serviceId, date }: { serviceId: string, date: string }) => {
             // Mock for now
@@ -84,6 +107,24 @@ export const resolvers = {
         updateAppointmentStatus: async (_: unknown, { id, status }: { id: string, status: string }) => {
             const result = await query('UPDATE appointments SET status = $1 WHERE id = $2 RETURNING *', [status, id]);
             return result.rows[0];
+        },
+
+        updateConsultationStatus: async (_: unknown, { id, status }: { id: string, status: string }) => {
+            const result = await query('UPDATE consultations SET status = $1 WHERE id = $2 RETURNING *', [status, id]);
+            const c = result.rows[0];
+            return {
+                id: c.id,
+                userId: c.user_id,
+                subject: c.subject,
+                message: c.message,
+                status: c.status,
+                createdAt: c.created_at.toISOString()
+            };
+        },
+
+        deleteConsultation: async (_: unknown, { id }: { id: string }) => {
+            await query('DELETE FROM consultations WHERE id = $1', [id]);
+            return true;
         },
 
         deleteAppointment: async (_: unknown, { id }: { id: string }) => {

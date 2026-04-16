@@ -65,16 +65,16 @@ export default function LoginPage() {
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="max-w-[1200px] w-full grid grid-cols-1 lg:grid-cols-2 glass rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-white/10"
+                className="max-w-[1200px] w-full grid grid-cols-1 lg:grid-cols-2 glass rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-primary/10"
             >
                 {/* Visual Side */}
                 <div className="hidden lg:block relative p-12 overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20">
                     <div className="relative z-10 h-full flex flex-col justify-between">
-                        <Link href="/" className="text-3xl font-black font-outfit text-white">RIM</Link>
+                        <Link href="/" className="text-3xl font-black font-outfit text-foreground">RIM</Link>
 
                         <div className="space-y-6">
-                            <h2 className="text-5xl font-black leading-tight text-white">Your aesthetic journey <br /> starts here.</h2>
-                            <p className="text-white/60 text-lg">Access your personalized treatment plans, track your progress, and manage your appointments seamlessly.</p>
+                            <h2 className="text-5xl font-black leading-tight text-foreground">Your aesthetic journey <br /> starts here.</h2>
+                            <p className="text-foreground/60 text-lg">Access your personalized treatment plans, track your progress, and manage your appointments seamlessly.</p>
                         </div>
 
                         <div className="flex items-center space-x-4">
@@ -85,7 +85,7 @@ export default function LoginPage() {
                                     </div>
                                 ))}
                             </div>
-                            <p className="text-sm font-bold text-white/40 uppercase tracking-widest">+5k Members joined</p>
+                            <p className="text-sm font-bold text-foreground/40 uppercase tracking-widest">+5k Members joined</p>
                         </div>
                     </div>
                     {/* Decorative image background */}
@@ -97,7 +97,7 @@ export default function LoginPage() {
                 {/* Form Side */}
                 <div className="p-6 md:p-16 lg:p-24 bg-background/50 backdrop-blur-3xl">
                     <div className="max-w-md mx-auto">
-                        <Link href="/" className="lg:hidden text-2xl font-black font-outfit text-white mb-8 block text-center">RIM</Link>
+                        <Link href="/" className="lg:hidden text-2xl font-black font-outfit text-foreground mb-8 block text-center">RIM</Link>
                         <h1 className="text-3xl md:text-4xl font-black mb-2 text-center md:text-left">Welcome Back</h1>
                         <p className="text-foreground/40 font-bold mb-10 uppercase tracking-tighter text-[10px] md:text-sm text-center md:text-left">Please enter your credentials to login.</p>
 
@@ -117,7 +117,7 @@ export default function LoginPage() {
                                         placeholder="admin@rim.com"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
-                                        className="w-full bg-white/5 border border-white/10 rounded-2xl pl-14 pr-6 py-4 focus:outline-none focus:border-primary transition-all text-white placeholder:text-white/20"
+                                        className="w-full bg-white/5 border border-primary/10 rounded-2xl pl-14 pr-6 py-4 focus:outline-none focus:border-primary transition-all text-foreground placeholder:text-foreground/20"
                                         required
                                     />
                                 </div>
@@ -135,14 +135,14 @@ export default function LoginPage() {
                                         placeholder="••••••••"
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
-                                        className="w-full bg-white/5 border border-white/10 rounded-2xl pl-14 pr-6 py-4 focus:outline-none focus:border-primary transition-all text-white placeholder:text-white/20"
+                                        className="w-full bg-white/5 border border-primary/10 rounded-2xl pl-14 pr-6 py-4 focus:outline-none focus:border-primary transition-all text-foreground placeholder:text-foreground/20"
                                         required
                                     />
                                 </div>
                             </div>
 
                             <div className="flex items-center space-x-3 px-2">
-                                <input type="checkbox" className="w-4 h-4 rounded border-white/10 bg-white/5 text-primary focus:ring-primary" />
+                                <input type="checkbox" className="w-4 h-4 rounded border-primary/10 bg-white/5 text-primary focus:ring-primary" />
                                 <span className="text-sm text-foreground/50">Keep me logged in</span>
                             </div>
 
@@ -152,7 +152,7 @@ export default function LoginPage() {
                                 className="btn-primary w-full py-5 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 {loading ? (
-                                    <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
+                                    <div className="w-5 h-5 border-2 border-primary/20 border-t-white rounded-full animate-spin" />
                                 ) : (
                                     <>
                                         <span>Sign In</span>
@@ -163,7 +163,7 @@ export default function LoginPage() {
                         </form>
 
                         <div className="relative my-10">
-                            <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10" /></div>
+                            <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-primary/10" /></div>
                             <div className="relative flex justify-center text-xs uppercase"><span className="bg-transparent px-4 text-foreground/30 font-bold">Or continue with</span></div>
                         </div>
 

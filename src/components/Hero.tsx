@@ -58,7 +58,7 @@ export default function Hero() {
                     transition={{ duration: 1 }}
                     className="relative lg:col-span-5 max-w-md mx-auto w-full"
                 >
-                    <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-primary/20 border border-white/10 group aspect-[4/5] lg:aspect-[3/4]">
+                    <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-primary/20 border border-primary/10 group aspect-[4/5] lg:aspect-[3/4]">
                         <Image
                             src="/assets/WhatsApp Image 2026-02-06 at 22.16.16.jpeg"
                             alt="Clinic"

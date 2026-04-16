@@ -62,6 +62,17 @@ async function initDb() {
             );
         `);
 
+        await pool.query(`
+            CREATE TABLE IF NOT EXISTS consultations (
+                id SERIAL PRIMARY KEY,
+                user_id INTEGER REFERENCES users(id),
+                subject TEXT NOT NULL,
+                message TEXT NOT NULL,
+                status TEXT DEFAULT 'OPEN',
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+        `);
+
         // Insert some sample services if empty
         const servicesCount = await pool.query('SELECT count(*) FROM services');
         if (parseInt(servicesCount.rows[0].count) === 0) {
@@ -96,9 +107,10 @@ async function initDb() {
                 INSERT INTO appointments (user_id, service_id, appointment_date, status)
                 SELECT u.id, s.id, NOW() + (random() * interval '30 days') - (random() * interval '15 days'), 
                 CASE WHEN random() > 0.5 THEN 'CONFIRMED' ELSE 'PENDING' END
-                FROM users u, services s
-                WHERE u.role = 'CLIENT'
+                FROM users u
+                CROSS JOIN services s
                 CROSS JOIN generate_series(1, 5)
+                WHERE u.role = 'CLIENT'
                 LIMIT 30;
             `);
             console.log('Mass appointments inserted.');
@@ -114,6 +126,22 @@ async function initDb() {
                 SELECT id, 'Aesthetic Dermotherapy', floor(random() * 100), 'Active' FROM users WHERE role = 'CLIENT';
             `);
             console.log('Extended clinical progress data inserted.');
+        }
+
+        // Add consultations
+        const consultationsCount = await pool.query('SELECT count(*) FROM consultations');
+        if (parseInt(consultationsCount.rows[0].count) === 0) {
+            await pool.query(`
+                INSERT INTO consultations (user_id, subject, message, status)
+                SELECT id, 'Skin Concern', 'I have some redness on my cheeks.', 'OPEN' FROM users WHERE role = 'CLIENT' LIMIT 2;
+                
+                INSERT INTO consultations (user_id, subject, message, status)
+                SELECT id, 'Follow-up', 'How is the healing process going?', 'IN_PROGRESS' FROM users WHERE role = 'CLIENT' OFFSET 2 LIMIT 2;
+                
+                INSERT INTO consultations (user_id, subject, message, status)
+                SELECT id, 'Product Inquiry', 'What cream should I use after the treatment?', 'CLOSED' FROM users WHERE role = 'CLIENT' OFFSET 4 LIMIT 1;
+            `);
+            console.log('Seed consultations inserted.');
         }
 
         console.log('Database initialization complete.');

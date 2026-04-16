@@ -59,7 +59,7 @@ export default function TestimonialsPage() {
                                     <div className="aspect-square rounded-[2rem] md:rounded-[3rem] overflow-hidden lg:rotate-3 transition-transform duration-500 shadow-2xl">
                                         <Image src={testimonials[active].image} alt={testimonials[active].name} fill className="object-cover" />
                                     </div>
-                                    <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-16 h-16 md:w-24 md:h-24 bg-primary rounded-full flex items-center justify-center text-white scale-110 shadow-xl shadow-primary/20">
+                                    <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-16 h-16 md:w-24 md:h-24 bg-primary rounded-full flex items-center justify-center text-foreground scale-110 shadow-xl shadow-primary/20">
                                         <Quote size={24} className="md:size-10" />
                                     </div>
                                 </div>
@@ -84,13 +84,13 @@ export default function TestimonialsPage() {
                             <div className="lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:-left-8 lg:-right-8 flex justify-center lg:justify-between mt-8 lg:mt-0 space-x-4 lg:space-x-0">
                                 <button
                                     onClick={() => setActive(active === 0 ? testimonials.length - 1 : active - 1)}
-                                    className="w-12 h-12 lg:w-16 lg:h-16 glass rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-xl"
+                                    className="w-12 h-12 lg:w-16 lg:h-16 glass rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-foreground transition-all shadow-xl"
                                 >
                                     <ArrowLeft size={20} />
                                 </button>
                                 <button
                                     onClick={() => setActive(active === testimonials.length - 1 ? 0 : active + 1)}
-                                    className="w-12 h-12 lg:w-16 lg:h-16 glass rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-xl"
+                                    className="w-12 h-12 lg:w-16 lg:h-16 glass rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-foreground transition-all shadow-xl"
                                 >
                                     <ArrowRight size={20} />
                                 </button>
@@ -105,7 +105,7 @@ export default function TestimonialsPage() {
                     {/* Grid Layout Review Wall */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4 md:px-0">
                         {testimonials.map((t, i) => (
-                            <div key={i} className="glass p-6 md:p-8 rounded-[2rem] md:rounded-3xl border border-white/5 hover:bg-white/10 transition-all cursor-pointer">
+                            <div key={i} className="glass p-6 md:p-8 rounded-[2rem] md:rounded-3xl border border-primary/5 hover:bg-white/10 transition-all cursor-pointer">
                                 <div className="flex items-center space-x-4 mb-6">
                                     <div className="relative w-12 h-12 rounded-full overflow-hidden shrink-0">
                                         <Image src={t.image} alt={t.name} fill className="object-cover" />

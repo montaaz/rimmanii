@@ -86,8 +86,8 @@ export default function ServiceDetail() {
                             <h2 className="text-2xl md:text-3xl font-bold mb-8">Treatment Journey</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {service.process.map((step, index) => (
-                                    <div key={index} className="glass p-6 rounded-2xl border border-white/5 hover:border-primary/30 transition-colors relative overflow-hidden group min-h-[160px] flex flex-col justify-end">
-                                        <div className="absolute right-4 top-0 text-8xl font-black text-white/5 group-hover:text-primary/10 transition-colors select-none leading-none">
+                                    <div key={index} className="glass p-6 rounded-2xl border border-primary/5 hover:border-primary/30 transition-colors relative overflow-hidden group min-h-[160px] flex flex-col justify-end">
+                                        <div className="absolute right-4 top-0 text-8xl font-black text-foreground/5 group-hover:text-primary/10 transition-colors select-none leading-none">
                                             {index + 1}
                                         </div>
                                         <h3 className="text-xl font-bold mb-2 relative z-10 text-primary">Step {index + 1}</h3>
@@ -127,7 +127,7 @@ export default function ServiceDetail() {
                                 ))}
                             </ul>
 
-                            <div className="pt-6 border-t border-white/10">
+                            <div className="pt-6 border-t border-primary/10">
                                 <Link
                                     href="/reservation"
                                     className="btn-primary w-full flex items-center justify-center space-x-2 py-4 text-lg shadow-xl shadow-primary/20 group"
@@ -145,7 +145,7 @@ export default function ServiceDetail() {
                 </div>
             </section>
 
-            <div className="relative z-10 bg-black/60 backdrop-blur-sm">
+            <div className="relative z-10 bg-background/60 backdrop-blur-sm">
                 <Footer />
             </div>
         </main>

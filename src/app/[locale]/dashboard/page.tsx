@@ -65,6 +65,14 @@ export default function DashboardPage() {
                         user { fullName }
                         service { name }
                     }
+                    allConsultations {
+                        id
+                        subject
+                        message
+                        status
+                        createdAt
+                        user { fullName email }
+                    }
                 }
             ` : `
                 query GetClientData($userId: ID!) {
@@ -114,6 +122,12 @@ export default function DashboardPage() {
             if (action === 'role') {
                 queryBody = `mutation { toggleUserStatus(id: "${id}", role: "${value}") { id role } }`;
             }
+        } else if (type === 'consultation') {
+            if (action === 'status') {
+                queryBody = `mutation { updateConsultationStatus(id: "${id}", status: "${value}") { id status } }`;
+            } else if (action === 'delete') {
+                queryBody = `mutation { deleteConsultation(id: "${id}") }`;
+            }
         }
 
         if (!queryBody) return;
@@ -152,7 +166,7 @@ export default function DashboardPage() {
         return (
             <div className="min-h-screen bg-background text-foreground flex overflow-hidden font-outfit">
                 {/* Admin Sidebar */}
-                <aside className="w-80 glass border-r border-white/10 hidden xl:flex flex-col p-8 sticky top-0 h-screen">
+                <aside className="w-80 glass border-r border-primary/10 hidden xl:flex flex-col p-8 sticky top-0 h-screen">
                     <Link href="/" className="text-3xl font-black mb-12 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">RIM ADMIN</Link>
 
                     <nav className="space-y-2 flex-grow">
@@ -161,8 +175,8 @@ export default function DashboardPage() {
                                 key={i}
                                 onClick={() => setActiveTab(item.label)}
                                 className={`w-full flex items-center space-x-4 px-6 py-4 rounded-2xl transition-all ${activeTab === item.label
-                                    ? 'bg-primary text-white shadow-lg shadow-primary/20'
-                                    : 'text-foreground/40 hover:bg-white/5 hover:text-white'
+                                    ? 'bg-primary text-foreground shadow-lg shadow-primary/20'
+                                    : 'text-foreground/40 hover:bg-white/5 hover:text-foreground'
                                     }`}
                             >
                                 <item.icon size={20} />
@@ -171,7 +185,7 @@ export default function DashboardPage() {
                         ))}
                     </nav>
 
-                    <div className="mt-auto pt-8 border-t border-white/5">
+                    <div className="mt-auto pt-8 border-t border-primary/5">
                         <div className="glass p-6 rounded-3xl flex items-center space-x-4">
                             <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary bg-primary/20 flex items-center justify-center">
                                 <span className="font-bold text-xl text-primary">{user.fullName.charAt(0)}</span>
@@ -197,7 +211,7 @@ export default function DashboardPage() {
                                 <input
                                     type="text"
                                     placeholder="Search command..."
-                                    className="bg-white/5 border border-white/10 rounded-2xl pl-12 pr-6 py-3 text-sm focus:outline-none focus:border-primary transition-all w-64"
+                                    className="bg-white/5 border border-primary/10 rounded-2xl pl-12 pr-6 py-3 text-sm focus:outline-none focus:border-primary transition-all w-64"
                                 />
                             </div>
                             <button className="glass p-3 rounded-2xl relative text-foreground/60 hover:text-primary transition-colors">
@@ -279,7 +293,7 @@ export default function DashboardPage() {
 
                     {activeTab === 'Users' && (
                         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="glass rounded-[3rem] overflow-hidden">
-                            <div className="p-10 border-b border-white/5 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                            <div className="p-10 border-b border-primary/5 flex flex-col md:flex-row md:items-center justify-between gap-6">
                                 <h3 className="text-xl font-black">Client Management</h3>
                                 <div className="flex items-center gap-4">
                                     <button className="btn-primary py-3 px-6 text-xs">Add New User</button>
@@ -322,7 +336,7 @@ export default function DashboardPage() {
                                                         <MoreVertical size={20} />
                                                     </button>
                                                     {activeMenu && activeMenu.id === u.id && activeMenu.type === 'user' && (
-                                                        <div className="absolute right-8 top-12 z-50 glass border border-white/10 rounded-2xl p-2 w-48 shadow-2xl backdrop-blur-3xl">
+                                                        <div className="absolute right-8 top-12 z-50 glass border border-primary/10 rounded-2xl p-2 w-48 shadow-2xl backdrop-blur-3xl">
                                                             <button onClick={() => handleAction('user', u.id, 'role', u.role === 'ADMIN' ? 'CLIENT' : 'ADMIN')} className="w-full text-left px-4 py-2 text-xs font-bold hover:bg-white/5 rounded-xl flex items-center space-x-2">
                                                                 <Settings size={14} />
                                                                 <span>{u.role === 'ADMIN' ? 'Revoke Admin' : 'Make Admin'}</span>
@@ -344,7 +358,7 @@ export default function DashboardPage() {
 
                     {activeTab === 'Appointments' && (
                         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="glass rounded-[3rem] overflow-hidden">
-                            <div className="p-10 border-b border-white/5 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                            <div className="p-10 border-b border-primary/5 flex flex-col md:flex-row md:items-center justify-between gap-6">
                                 <h3 className="text-xl font-black">All Appointments</h3>
                                 <div className="flex items-center gap-4">
                                     <button className="btn-primary py-3 px-6 text-xs">Schedule New</button>
@@ -388,7 +402,7 @@ export default function DashboardPage() {
                                                             <MoreVertical size={20} />
                                                         </button>
                                                         {activeMenu && activeMenu.id === apt.id && activeMenu.type === 'appointment' && (
-                                                            <div className="absolute right-8 top-12 z-50 glass border border-white/10 rounded-2xl p-2 w-48 shadow-2xl backdrop-blur-3xl">
+                                                            <div className="absolute right-8 top-12 z-50 glass border border-primary/10 rounded-2xl p-2 w-48 shadow-2xl backdrop-blur-3xl">
                                                                 <button onClick={() => handleAction('appointment', apt.id, 'status', 'CONFIRMED')} className="w-full text-left px-4 py-2 text-xs font-bold hover:bg-white/5 rounded-xl flex items-center space-x-2 text-green-500">
                                                                     <Activity size={14} />
                                                                     <span>Confirm</span>
@@ -419,7 +433,87 @@ export default function DashboardPage() {
                         </motion.div>
                     )}
 
-                    {activeTab !== 'Overview' && activeTab !== 'Users' && activeTab !== 'Appointments' && (
+                    {activeTab === 'Consultations' && (
+                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="glass rounded-[3rem] overflow-hidden">
+                            <div className="p-10 border-b border-primary/5 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                                <h3 className="text-xl font-black">Clinical Consultations</h3>
+                                <div className="flex items-center gap-4">
+                                    <button className="btn-primary py-3 px-6 text-xs">New Consultation</button>
+                                </div>
+                            </div>
+                            <div className="overflow-x-auto">
+                                <table className="w-full text-left">
+                                    <thead className="bg-white/5 text-foreground/40 text-[10px] uppercase font-black tracking-widest">
+                                        <tr>
+                                            <th className="p-8">Client</th>
+                                            <th className="p-8">Subject</th>
+                                            <th className="p-8">Message</th>
+                                            <th className="p-8">Status</th>
+                                            <th className="p-8 text-right">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-white/5">
+                                        {dashboardData?.allConsultations?.map((c: any, i: number) => (
+                                            <tr key={i} className="hover:bg-white/5 transition-colors group">
+                                                <td className="p-8">
+                                                    <div className="flex flex-col">
+                                                        <span className="font-bold">{c.user?.fullName || 'Anonymous'}</span>
+                                                        <span className="text-[10px] text-foreground/40">{c.user?.email}</span>
+                                                    </div>
+                                                </td>
+                                                <td className="p-8 text-sm font-bold text-primary">{c.subject}</td>
+                                                <td className="p-8 text-sm text-foreground/60 max-w-md truncate">{c.message}</td>
+                                                <td className="p-8">
+                                                    <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase ${c.status === 'OPEN' ? 'bg-blue-500/10 text-blue-500' :
+                                                        c.status === 'IN_PROGRESS' ? 'bg-yellow-500/10 text-yellow-500' :
+                                                            'bg-green-500/10 text-green-500'
+                                                        }`}>
+                                                        {c.status.replace('_', ' ')}
+                                                    </span>
+                                                </td>
+                                                <td className="p-8 text-right relative">
+                                                    <button
+                                                        onClick={() => setActiveMenu(prev => prev?.id === c.id ? null : { id: c.id, type: 'consultation' })}
+                                                        className="inline-block text-foreground/20 hover:text-primary transition-colors cursor-pointer bg-transparent border-none p-0 outline-none"
+                                                    >
+                                                        <MoreVertical size={20} />
+                                                    </button>
+                                                    {activeMenu && activeMenu.id === c.id && activeMenu.type === 'consultation' && (
+                                                        <div className="absolute right-8 top-12 z-50 glass border border-primary/10 rounded-2xl p-2 w-48 shadow-2xl backdrop-blur-3xl">
+                                                            <button onClick={() => handleAction('consultation', c.id, 'status', 'OPEN')} className="w-full text-left px-4 py-2 text-xs font-bold hover:bg-white/5 rounded-xl flex items-center space-x-2 text-blue-500">
+                                                                <MessageSquare size={14} />
+                                                                <span>Mark Open</span>
+                                                            </button>
+                                                            <button onClick={() => handleAction('consultation', c.id, 'status', 'IN_PROGRESS')} className="w-full text-left px-4 py-2 text-xs font-bold hover:bg-white/5 rounded-xl flex items-center space-x-2 text-yellow-500">
+                                                                <Activity size={14} />
+                                                                <span>In Progress</span>
+                                                            </button>
+                                                            <button onClick={() => handleAction('consultation', c.id, 'status', 'CLOSED')} className="w-full text-left px-4 py-2 text-xs font-bold hover:bg-white/5 rounded-xl flex items-center space-x-2 text-green-500">
+                                                                <History size={14} />
+                                                                <span>Close</span>
+                                                            </button>
+                                                            <div className="h-px bg-white/5 my-2" />
+                                                            <button onClick={() => handleAction('consultation', c.id, 'delete')} className="w-full text-left px-4 py-2 text-xs font-bold hover:bg-white/5 rounded-xl flex items-center space-x-2 text-red-500">
+                                                                <LogOut size={14} />
+                                                                <span>Delete</span>
+                                                            </button>
+                                                        </div>
+                                                    )}
+                                                </td>
+                                            </tr>
+                                        ))}
+                                        {(!dashboardData?.allConsultations || dashboardData.allConsultations.length === 0) && (
+                                            <tr>
+                                                <td colSpan={5} className="p-20 text-center text-foreground/40 font-bold uppercase tracking-widest text-xs">No consultations found</td>
+                                            </tr>
+                                        )}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </motion.div>
+                    )}
+
+                    {activeTab !== 'Overview' && activeTab !== 'Users' && activeTab !== 'Appointments' && activeTab !== 'Consultations' && (
                         <div className="glass p-20 rounded-[3rem] text-center">
                             <div className="w-20 h-20 rounded-[2rem] bg-white/5 flex items-center justify-center mx-auto mb-8 text-foreground/20">
                                 <Settings size={40} />
@@ -444,7 +538,7 @@ export default function DashboardPage() {
     return (
         <div className="min-h-screen bg-background text-foreground flex overflow-hidden">
             {/* Sidebar */}
-            <aside className="w-80 glass border-r border-white/10 hidden xl:flex flex-col p-8 sticky top-0 h-screen">
+            <aside className="w-80 glass border-r border-primary/10 hidden xl:flex flex-col p-8 sticky top-0 h-screen">
                 <Link href="/" className="text-3xl font-black mb-12 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">RIM</Link>
 
                 <nav className="space-y-2 flex-grow">
@@ -459,7 +553,7 @@ export default function DashboardPage() {
                     ].map((item, i) => (
                         <button
                             key={i}
-                            className={`w-full flex items-center space-x-4 px-6 py-4 rounded-2xl transition-all ${item.active ? 'bg-primary text-white shadow-lg shadow-primary/20' : 'text-foreground/40 hover:bg-white/5 hover:text-white'
+                            className={`w-full flex items-center space-x-4 px-6 py-4 rounded-2xl transition-all ${item.active ? 'bg-primary text-foreground shadow-lg shadow-primary/20' : 'text-foreground/40 hover:bg-white/5 hover:text-foreground'
                                 }`}
                         >
                             <item.icon size={20} />
@@ -468,7 +562,7 @@ export default function DashboardPage() {
                     ))}
                 </nav>
 
-                <div className="mt-auto pt-8 border-t border-white/5 space-y-4">
+                <div className="mt-auto pt-8 border-t border-primary/5 space-y-4">
                     <div className="glass p-6 rounded-3xl flex items-center space-x-4">
                         <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary">
                             <Image src="/assets/WhatsApp Image 2026-02-06 at 22.05.38.jpeg" width={48} height={48} className="object-cover" alt="User" />
@@ -484,7 +578,7 @@ export default function DashboardPage() {
 
             {/* Main Content */}
             <main className="flex-grow overflow-y-auto max-h-screen w-full">
-                <header className="p-4 md:p-8 flex items-center justify-between sticky top-0 bg-background/80 backdrop-blur-3xl z-40 border-b border-white/5">
+                <header className="p-4 md:p-8 flex items-center justify-between sticky top-0 bg-background/80 backdrop-blur-3xl z-40 border-b border-primary/5">
                     <div className="flex items-center space-x-4 flex-grow max-w-xl">
                         <Link href="/" className="xl:hidden text-2xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mr-4">RIM</Link>
                         <div className="relative w-full">
@@ -492,7 +586,7 @@ export default function DashboardPage() {
                             <input
                                 type="text"
                                 placeholder="Search..."
-                                className="w-full bg-white/5 border border-white/10 rounded-xl md:rounded-2xl pl-12 md:pl-16 pr-4 md:pr-6 py-3 md:py-4 text-sm focus:outline-none focus:border-primary transition-colors"
+                                className="w-full bg-white/5 border border-primary/10 rounded-xl md:rounded-2xl pl-12 md:pl-16 pr-4 md:pr-6 py-3 md:py-4 text-sm focus:outline-none focus:border-primary transition-colors"
                             />
                         </div>
                     </div>
@@ -523,7 +617,7 @@ export default function DashboardPage() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 }}
-                                className="glass p-5 md:p-8 rounded-[1.5rem] md:rounded-[2.5rem] relative overflow-hidden group hover:border-white/20 transition-all"
+                                className="glass p-5 md:p-8 rounded-[1.5rem] md:rounded-[2.5rem] relative overflow-hidden group hover:border-primary/20 transition-all"
                             >
                                 <div className={`p-3 md:p-4 rounded-xl md:rounded-2xl bg-${stat.color}/10 text-${stat.color} w-fit mb-4 md:mb-6 group-hover:scale-110 transition-transform`}>
                                     <stat.icon size={24} />
@@ -578,7 +672,7 @@ export default function DashboardPage() {
                                                 fill
                                                 className="object-cover group-hover:scale-110 transition-transform duration-700"
                                             />
-                                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center uppercase font-black text-[10px] tracking-widest">
+                                            <div className="absolute inset-0 bg-background/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center uppercase font-black text-[10px] tracking-widest">
                                                 Zoom View
                                             </div>
                                         </div>
