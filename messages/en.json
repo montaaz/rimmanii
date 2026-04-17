@@ -76,7 +76,11 @@
         "energySessions": "Energy Sessions",
         "emotionalIntelligence": "Emotional Intelligence",
         "feminineEnergy": "Feminine Energy",
-        "personalGrowth": "Personal Growth"
+        "personalGrowth": "Personal Growth",
+        "aestheticDermotherapy": "Aesthetic Dermotherapy",
+        "paramedicalDermopigmentation": "Paramedical Dermopigmentation",
+        "medicalScarRevision": "Medical Scar Revision",
+        "initialSkinConsultation": "Initial Skin Consultation"
     },
     "Stats": {
         "participants": "Course Participants",
@@ -323,5 +327,12 @@
         "total": "Total",
         "checkout": "Proceed to Checkout",
         "remove": "Remove"
+    },
+    "Popup": {
+        "title": "Master Your Art",
+        "subtitle": "Dermopigmentation Training",
+        "description": "Join our elite dermopigmentation training program. Learn medical-grade techniques and artistic mastery with Rym Manai's exclusive formation.",
+        "cta": "Enroll Now",
+        "close": "Close"
     }
 }

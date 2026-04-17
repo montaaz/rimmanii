@@ -75,7 +75,11 @@
         "energySessions": "Sessions Énergétiques",
         "emotionalIntelligence": "Intelligence Émotionnelle",
         "feminineEnergy": "Énergie Féminine",
-        "personalGrowth": "Croissance Personnelle"
+        "personalGrowth": "Croissance Personnelle",
+        "aestheticDermotherapy": "Dermothérapie Esthétique",
+        "paramedicalDermopigmentation": "Dermopigmentation Paramédicale",
+        "medicalScarRevision": "Révision de Cicatrice Médicale",
+        "initialSkinConsultation": "Consultation Initiale de la Peau"
     },
     "Stats": {
         "participants": "Participants aux cours",
@@ -321,6 +325,13 @@
         "shipping": "Frais de traitement",
         "total": "Total",
         "checkout": "Passer à la caisse",
-        "remove": "Supprimer"
+        "remove": "Retirer"
+    },
+    "Popup": {
+        "title": "Maîtrisez Votre Art",
+        "subtitle": "Formation en Dermopigmentation",
+        "description": "Rejoignez notre programme de formation d'élite. Apprenez les techniques médicales et la maîtrise artistique avec la formation exclusive de Rym Manai.",
+        "cta": "S'inscrire Maintenant",
+        "close": "Fermer"
     }
 }

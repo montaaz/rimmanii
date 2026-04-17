@@ -72,10 +72,14 @@
         "alertSelectDate": "الرجاء تحديد موعد أولا"
     },
     "Services": {
-        "energySessions": "جلسات طاقية",
+        "energySessions": "جلسات الطاقة",
         "emotionalIntelligence": "الذكاء العاطفي",
-        "feminineEnergy": "طاقة الأنوثة",
-        "personalGrowth": "النمو الشخصي"
+        "feminineEnergy": "الطاقة الأنثوية",
+        "personalGrowth": "النمو الشخصي",
+        "aestheticDermotherapy": "العلاج الجلدي التجميلي",
+        "paramedicalDermopigmentation": "التصبغ الطبي المساعد",
+        "medicalScarRevision": "تصحيح الندبات الطبي",
+        "initialSkinConsultation": "استشارة طبية أولية"
     },
     "Stats": {
         "participants": "مشارك في الدورات المدفوعة",
@@ -322,5 +326,12 @@
         "total": "المجموع",
         "checkout": "إتمام الشراء",
         "remove": "إزالة"
+    },
+    "Popup": {
+        "title": "احترفي فن التصبغ",
+        "subtitle": "دورة تدريبية في الميكروبليدينج والتصبغ",
+        "description": "انضمي إلى برنامجنا التدريبي المتميز. تعلمي التقنيات الطبية والاحتراف الفني مع دورة ريم مناعي الحصرية.",
+        "cta": "سجلي الآن",
+        "close": "إغلاق"
     }
 }

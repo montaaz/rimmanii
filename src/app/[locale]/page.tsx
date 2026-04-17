@@ -10,6 +10,7 @@ import AboutSection from '@/components/AboutSection';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import Footer from '@/components/Footer';
 import { BackToTop, WhatsAppButton } from '@/components/FloatingWidgets';
+import BookingPopup from '@/components/BookingPopup';
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       {/* Floating Widgets */}
       <BackToTop />
       <WhatsAppButton />
+      <BookingPopup />
     </main>
   );
 }
